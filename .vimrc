@@ -3,10 +3,9 @@ set nocompatible   " Disable vi-compatibility
 set encoding=utf-8
 source ~/.vim/plugins.vim
 set t_Co=256
+"color morning
+color evening
 hi Visual term=reverse cterm=reverse guibg=Grey
-hi Cursor guifg=white guibg=black
-"hi Cursor term=reverse cterm=reverse guifg=Black guibg=Grey
-"hi Cursorline term=reverse cterm=reverse guifg=None guibg=Grey
 "set background=dark
 "colorscheme solarized
 set guioptions-=T " Removes top toolbar
@@ -20,6 +19,7 @@ set smarttab
 set tags=tags
 set softtabstop=4               " when hitting <BS>, pretend like a tab is removed, even if spaces
 set expandtab                   " expand tabs by default (overloadable per file type later)
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 set shiftwidth=4                " number of spaces to use for autoindenting
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
@@ -34,6 +34,7 @@ set smartcase                   " ignore case if search pattern is all lowercase
 set timeout timeoutlen=200 ttimeoutlen=100
 set visualbell           " don't beep
 set noerrorbells         " don't beep
+set hidden				"allows cycling buffers without saving
 "set autowrite  "Save on buffer switch
 set mouse=a
 
@@ -43,15 +44,30 @@ let mapleader = ","
 let g:mapleader = ","
 
 "one key command mode
-"nnoremap <C-[> :
+"nnoremap <C-;> :
 
+" delete line
+nnoremap <C-E> dd
+nnoremap <C-Y> :NERDTreeToggle<cr>
+
+"cycle buffer
+:nnoremap <Tab> :bnext<CR>
+:nnoremap <S-Tab> :bprevious<CR>
+
+"buffer del
+nmap <leader>d :bd<cr>
 " Fast saves
 nmap <leader>w :w!<cr>
+nmap <leader>s :update<cr>
+"map! <leader>w <Esc>:w!<cr>
+"map! <leader>s <Esc>:update<cr>
+"imap <leader>w <Esc>:w!<cr>
+"imap <leader>s <Esc>:update<cr>
 nmap <leader>r :e ~/.vimrc<cr>
 
 " Down is really the next line
-nnoremap j gj
-nnoremap k gk
+"nnoremap j gj
+"nnoremap k gk
 
 "Easy escaping to normal model
 imap jj <esc>
@@ -67,10 +83,10 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 "Resize vsplit
-nmap <C-v> :vertical resize +5<cr>
-nmap 25 :vertical resize 40<cr>
-nmap 50 <c-w>=
-nmap 75 :vertical resize 120<cr>
+"nmap <C-v> :vertical resize +5<cr>
+"nmap 25 :vertical resize 40<cr>
+"nmap 50 <c-w>=
+"nmap 75 :vertical resize 120<cr>
 
 "nmap <C-b> :NERDTreeToggle<cr>
 
@@ -105,9 +121,7 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 
 " Enable the list of buffers
 if has('osx')
-    "let g:airline_powerline_fonts = 1
-else
-	color morning
+    let g:airline_powerline_fonts = 1
 endif
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_theme='simple'
@@ -123,10 +137,10 @@ autocmd cursormoved * set hlsearch
 " Remove search results
 command! H let @/=""
 
-map <Leader>t :!phpunit %<cr>
+"map <Leader>t :!phpunit %<cr>
 
 " Abbreviations
-abbrev pft PHPUnit_Framework_TestCase
+abbrev fn function(){}
 abbrev gm !php artisan generate:model
 
 " Auto-remove trailing spaces
