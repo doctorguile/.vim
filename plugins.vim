@@ -15,7 +15,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

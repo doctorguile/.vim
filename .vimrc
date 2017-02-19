@@ -109,6 +109,13 @@ highlight Search cterm=underline
 "set backupdir=~/.vim/backup//
 "set directory=~/.vim/swap//
 
+" UltiSnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger="<c-s>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
 
 " Easy motion stuff
 "let g:EasyMotion_leader_key = '<Leader>'
@@ -166,3 +173,9 @@ nmap sp :split<cr>
 nmap :ed :edit %:p:h/
 
 syntax on
+
+" source a host specific config
+let localvimrc =expand("~/.vimrc.local") 
+if filereadable(localvimrc)
+	execute 'source '.fnameescape(localvimrc)
+endif
