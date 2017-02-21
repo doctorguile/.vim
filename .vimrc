@@ -162,7 +162,11 @@ nmap ,todo :e todo.txt<cr>
 
 " UltiSnips Stuff
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+if s:is_osx
 let g:UltiSnipsExpandTrigger="÷"
+else
+let g:UltiSnipsExpandTrigger="/"
+endif
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
