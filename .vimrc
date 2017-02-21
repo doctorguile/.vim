@@ -161,6 +161,8 @@ autocmd BufWritePre *.php :%s/\s\+$//e
 nmap ,todo :e todo.txt<cr>
 
 " UltiSnips Stuff
+
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 if s:is_osx
 let g:UltiSnipsExpandTrigger="÷"

@@ -1,0 +1,7 @@
+snippet pm "preg_match ... " w
+if(1 == preg_match(${1:$pattern}, ${2:$subject}, ${3:$matches} /* $flags=PREG_OFFSET_CAPTURE, $offset=0 */)) {
+	${4:$fullmatch} = $3[0];
+	${5:$parenthesized} = $3[1];  
+	${0:${VISUAL}}
+}
+endsnippet
