@@ -2,6 +2,20 @@
 set nocompatible   " Disable vi-compatibility
 set encoding=utf-8
 source ~/.vim/plugins.vim
+
+let s:is_osx = 0
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    let s:is_osx = 1
+  endif
+endif
+
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+let g:mapleader = ","
+
 set t_Co=256
 "color morning
 color evening
@@ -24,6 +38,7 @@ set shiftwidth=4                " number of spaces to use for autoindenting
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set paste
+set pastetoggle=<leader>p
 "set autoindent                  " always set autoindenting on
 set copyindent                  " copy the previous indentation on autoindenting
 "set number                      " always show line numbers
@@ -38,10 +53,6 @@ set hidden				"allows cycling buffers without saving
 "set autowrite  "Save on buffer switch
 set mouse=a
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
 
 "one key command mode
 "nnoremap <C-;> :
@@ -109,14 +120,6 @@ highlight Search cterm=underline
 "set backupdir=~/.vim/backup//
 "set directory=~/.vim/swap//
 
-" UltiSnips
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<c-s>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-"" If you want :UltiSnipsEdit to split your window.
-"let g:UltiSnipsEditSplit="vertical"
-
 " Easy motion stuff
 "let g:EasyMotion_leader_key = '<Leader>'
 
@@ -127,8 +130,9 @@ set encoding=utf-8 " Necessary to show Unicode glyphs
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 " Enable the list of buffers
-if has('osx')
-    let g:airline_powerline_fonts = 1
+
+if s:is_osx
+"    let g:airline_powerline_fonts = 1
 endif
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_theme='simple'
@@ -155,6 +159,15 @@ autocmd BufWritePre *.php :%s/\s\+$//e
 
 " Edit todo list for project
 nmap ,todo :e todo.txt<cr>
+
+" UltiSnips Stuff
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="÷"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " CtrlP Stuff
 
