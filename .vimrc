@@ -168,9 +168,10 @@ if s:is_osx
 let g:UltiSnipsExpandTrigger="÷"
 else
 let g:UltiSnipsExpandTrigger="/"
+let g:UltiSnipsListSnippets="?"
 endif
 let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
