@@ -1,0 +1,22 @@
+snippet rese "Regex Search" w
+${1:match} = re.search(${2:pattern}, ${3:subject}${4:,re.DOTALL|re.MULTILINE|re.IGNORECASE})
+# DOTALL without this flag, '.' will match anything except a newline.
+# MULTILINE affects ^ $
+if $1:
+    fullmatch = $1.group(0)
+    m1 = $1.group(1)
+    m1, m2 = $1.groups()
+    $0
+endsnippet
+snippet resub "Regex replace" w
+${1:replaced} = re.sub(${2:pattern}, ${3:replace}, ${4:subject}${5:,0}${6:,re.DOTALL|re.MULTILINE|re.IGNORECASE})
+# DOTALL without this flag, '.' will match anything except a newline.
+# MULTILINE affects ^ $
+$0
+endsnippet
+snippet walkdir "Walk directory" w
+for root, dirs, files in os.walk(${1:'.'}):
+    for fn in files:
+        fullpath = os.path.join(root, fn)
+        $0
+endsnippet
