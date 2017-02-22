@@ -1,3 +1,6 @@
+"copy word under cursor byw
+"*  ciw (change inner word) type then <ESC> n to next occurrence . to repeat
+"
 "https://gist.github.com/JeffreyWay/6753834
 set nocompatible   " Disable vi-compatibility
 set encoding=utf-8
@@ -18,7 +21,7 @@ let g:mapleader = ","
 
 set t_Co=256
 "color morning
-color evening
+"color evening
 hi Visual term=reverse cterm=reverse guibg=Grey
 "set background=dark
 "colorscheme solarized
