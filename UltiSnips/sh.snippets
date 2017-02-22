@@ -1,0 +1,30 @@
+snippet fun "sh compatible function" w
+${1:function_name}() {
+	local \$${2:arg1} = \${1:-${3:default}}
+	$0
+}
+endsnippet
+
+snippet fe "File exists" b
+	-e ${1:filename}$0
+endsnippet
+
+snippet de "Directory exists" b
+	-d ${1:directory}$0
+endsnippet
+
+snippet help "Insert bash cheat sheet" b
+<<'HELP'
+${#varname}           returns the length of varname
+    ${varname:-word}      returns word if varname is undefined 
+    ${varname:=word}      sets varname to word if varname is undefined
+    ${varname:+word}      returns word if varname exists and isn't null,
+                             otherwise returns null
+    ${varname:?message}   prints varname and message
+                             and aborts command if varname is undefined
+    ${varname:offset(:length) 
+                          returns parts of strings beginning at offset  
+for the specified length (default s total)
+HELP
+
+endsnippet

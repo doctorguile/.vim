@@ -51,7 +51,7 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 set hidden				"allows cycling buffers without saving
 "set autowrite  "Save on buffer switch
-set mouse=a
+set mouse=
 
 
 "one key command mode
