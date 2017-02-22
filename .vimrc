@@ -197,6 +197,27 @@ nmap :ed :edit %:p:h/
 
 syntax on
 
+"http://stackoverflow.com/questions/12625722/vim-toggling-buffer-overwrite-behavior-when-deleting
+function! ToggleSideEffects()
+    if mapcheck("dd", "n") == ""
+        noremap dd "_dd
+        noremap D "_D
+        noremap d "_d
+        noremap X "_X
+        noremap x "_x
+        echo 'Delete goes to black hole'
+    else
+        unmap dd
+        unmap D
+        unmap d
+        unmap X
+        unmap x
+        echo 'Delete behaves normally'
+    endif
+endfunction
+nnoremap ,, :call ToggleSideEffects()<CR>
+
+
 " source a host specific config
 let localvimrc =expand("~/.vimrc.local") 
 if filereadable(localvimrc)
