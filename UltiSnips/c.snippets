@@ -1,0 +1,19 @@
+snippet sw
+switch (${1:/* variable */}) {
+case ${2:/* variable case */}:
+	${3}
+	${4:break;}${5}
+	default:
+	${6}
+}
+endsnippet
+snippet ifn
+if (NULL == ${1:var}) {
+	${0:${VISUAL}}
+}
+endsnippet
+snippet ifnn
+if (NULL != ${1:var}) {
+	${0:${VISUAL}}
+}
+endsnippet

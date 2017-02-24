@@ -1,0 +1,18 @@
+snippet m
+${4:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3}) {
+	${0}
+}
+endsnippet
+snippet iter
+for (${1:auto} ${2:i} : ${3:container}) {
+	${4}
+}
+endsnippet
+snippet itit
+for (${1:std::vector}<${2:type}>::${3:const_iterator} ${4:i} = ${5:container}.begin(); $4 != $5.end(); ++$4) {
+	${6}
+}
+endsnippet
+snippet lam
+[${1}](${2}){${3}};
+endsnippet

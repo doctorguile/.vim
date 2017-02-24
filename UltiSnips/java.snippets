@@ -1,7 +1,26 @@
 snippet ife "if () else ... " w
 if (${1:true}) {
-	${2:stmt}
+    ${2:stmt}
 } else {
-	${0:${VISUAL}}
+    ${0:${VISUAL}}
+}
+endsnippet
+snippet pri
+private
+endsnippet
+snippet pro
+protected
+endsnippet
+snippet pub
+public
+endsnippet
+snippet ifn
+if (null == ${1:var}) {
+    ${0:${VISUAL}}
+}
+endsnippet
+snippet ifnn
+if (null != ${1:var}) {
+    ${0:${VISUAL}}
 }
 endsnippet
