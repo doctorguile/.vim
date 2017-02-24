@@ -58,10 +58,10 @@ set mouse=
 
 
 "one key command mode
-"nnoremap <C-;> :
+nmap ; :
 
 " delete line
-nnoremap <C-E> dd
+nnoremap <C-E> "_dd
 nnoremap <C-Y> :NERDTreeToggle<cr>
 
 "cycle buffer
@@ -70,13 +70,13 @@ nnoremap <C-Y> :NERDTreeToggle<cr>
 
 "buffer del
 nmap <leader>d :bd<cr>
+nmap <leader>q :q<cr>
 " Fast saves
-nmap <leader>w :w!<cr>
-nmap <leader>s :update<cr>
-"map! <leader>w <Esc>:w!<cr>
-"map! <leader>s <Esc>:update<cr>
-"imap <leader>w <Esc>:w!<cr>
-"imap <leader>s <Esc>:update<cr>
+"nmap <leader>w :w!<cr>
+nmap <leader>w :update<cr>
+imap <leader>w <Esc>:update<cr>
+map! <leader>w <Esc>:update<cr>
+
 nmap <leader>r :e ~/.vimrc<cr>
 
 " Down is really the next line
