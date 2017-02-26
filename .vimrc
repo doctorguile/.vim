@@ -169,6 +169,7 @@ let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 if s:is_osx
 let g:UltiSnipsExpandTrigger="÷"
+let g:UltiSnipsListSnippets="¿"
 else
 let g:UltiSnipsExpandTrigger="/"
 let g:UltiSnipsListSnippets="?"
