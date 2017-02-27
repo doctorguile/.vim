@@ -87,7 +87,17 @@ nmap <leader>r :e ~/.vimrc<cr>
 imap jj <esc>
 
 "Auto change directory to match current file ,cd
-"nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+" CDC = Change to Directory of Current file
+command! CD cd %:p:h
+
+" http://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+command! TrimWhitespace call TrimWhitespace()
 
 "easier window navigation
 
