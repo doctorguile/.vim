@@ -106,11 +106,13 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-"move cursor in insert mode 
+"move cursor in insert mode
 inoremap <c-h> <C-o>h
 inoremap <c-j> <C-o>j
 inoremap <c-k> <C-o>k
 inoremap <c-l> <C-o>l
+"open new line below in insert mode
+inoremap <c-m> <C-o>o
 
 "Resize vsplit
 "nmap <C-v> :vertical resize +5<cr>
@@ -236,7 +238,7 @@ nnoremap ,, :call ToggleSideEffects()<CR>
 
 
 " source a host specific config
-let localvimrc =expand("~/.vimrc.local") 
+let localvimrc =expand("~/.vimrc.local")
 if filereadable(localvimrc)
 	execute 'source '.fnameescape(localvimrc)
 endif
