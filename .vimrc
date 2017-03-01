@@ -106,6 +106,12 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
+"move cursor in insert mode 
+inoremap <c-h> <C-o>h
+inoremap <c-j> <C-o>j
+inoremap <c-k> <C-o>k
+inoremap <c-l> <C-o>l
+
 "Resize vsplit
 "nmap <C-v> :vertical resize +5<cr>
 "nmap 25 :vertical resize 40<cr>
