@@ -47,7 +47,7 @@ set copyindent                  " copy the previous indentation on autoindenting
 "set number                      " always show line numbers
 set ignorecase                  " ignore case when searching
 
-
+set cursorline
 set smartcase                   " ignore case if search pattern is all lowercase,
 set timeout timeoutlen=200 ttimeoutlen=100
 set visualbell           " don't beep
@@ -56,6 +56,7 @@ set hidden				"allows cycling buffers without saving
 "set autowrite  "Save on buffer switch
 set mouse=
 
+set wildmenu "  autocompletes things like filenames will provide a graphical menu
 
 "one key command mode
 nmap ; :
