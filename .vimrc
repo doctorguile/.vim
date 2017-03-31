@@ -112,7 +112,7 @@ inoremap <c-j> <C-o>j
 inoremap <c-k> <C-o>k
 inoremap <c-l> <C-o>l
 "open new line below in insert mode
-inoremap <c-i> <C-o>o
+"inoremap <c-i> <C-o>o
 
 "Resize vsplit
 "nmap <C-v> :vertical resize +5<cr>
