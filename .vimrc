@@ -186,13 +186,13 @@ nmap ,todo :e todo.txt<cr>
 
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-if s:is_osx
-let g:UltiSnipsExpandTrigger="÷"
-let g:UltiSnipsListSnippets="¿"
-else
+"if s:is_osx
+"let g:UltiSnipsExpandTrigger="÷"
+"let g:UltiSnipsListSnippets="¿"
+"else
 let g:UltiSnipsExpandTrigger="/"
 let g:UltiSnipsListSnippets="?"
-endif
+"endif
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
 
